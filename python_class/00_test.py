@@ -1,73 +1,47 @@
-# -*- coding: utf-8 -*-
-# 1. Data
-#     - 변수
-#     - 배열 / 자료형 : list, tuple, dictionary, set 등
-
-# 2. 데이터 가공
-#     - 조건문 if ~ else ~ 
-#     - 조건 반복문 while ~
-#     - 순회 반복문 for i in ~
-
-# 3. 데이터 가공을 더 편하게
-#     - 함수 def ~ (같은 코드 쓰기 귀찮으니까 코드를 정의하고 사용)
-#     - 클래스 class ~ ()
+from tkinter import W
 
 
-# class 참치선물세트:
-#     일반 = 0
-#     야채 = 0
-#     고추 = 0
-    
-    
-#     def 총합(self, 이름):
-#         내용물갯수 = self.일반 + self.야채 + self.고추
-#         return 이름 + str(내용물갯수)
-    
-#     def 출력(self):
-#         self.총합("담긴 참치 갯수 : ")
+class 캐릭터():
+    def __init__ (self, 체력, 공격력, 이속):
+        self.체력 = 체력 
+        self.공격력 = 공격력
+        self.이속 = 이속
 
-
-# 참치3호세트 = 참치선물세트() #참치 3호세트는 변수의 형태지만 인스턴스라고 부른다.
-
-# 참치3호세트.일반 = 12
-# 참치3호세트.야채 = 3
-# 참치3호세트.고추 = 3
-
-# 참치갯수 = 참치3호세트.총합("담긴 참치 갯수 :")
-
-# print(참치갯수)
-
-
-class 참치선물세트():
-    def __init__(self, 일반, 야채, 고추):
-        self.일반 = 일반
-        self.야채 = 야채
-        self.고추 = 고추
-    
-    def 내용물보기(self, name):
+    def 상태보기(name):
         print(name)
-        print("일반참치 : " + str(self.일반))
-        print("야채참치 : ", + str(self.야채))
-        print("고추참치 : " + str(self.고추))
+        print(self.체력)
 
-참치1호 = 참치선물세트( 10 ,3, 2)
-참치1호.내용물보기("참치 1호 내용물 안내")
+    def 상태보기(self, name):
+        print(name)
+        print("체력 : {}".format(self.체력))
+        print("공격력 : {}".format(self.공격력))
+        print("이속 : {}".format(self.이속)
     
+class 챔피언(캐릭터):
+    def __init__(self, 체력, 공격력, 이속, q, w, e, r): #야스오가 가져야 할 값들
+        super().__init__(체력, 공격력, 이속) #상속받기 전에 있던 것들중 가져와야 할것들.
+        self.q = q #새로 추가해야할 값들
+        self.w = w
+        self.e = e
+        self.r = r
+
+        def 상태보기(self, name):
+            super.상태보기(name)
+            print("q스킬 : {}".format(self.q))
+            print("w스킬 : {}".format(self.w))
+            print("e스킬 : {}".format(self.e)
+            print("r스킬 : {}".format(self.r))
+            
 
 
-class Units:
-    hp = 0
-    damage = 0
-    speed = 0
-
-timo = Units()
-timo.hp = 10
-timo.damage = 100
-timo.speed = 50
-
-yasuo = Units()
-yasuo.hp = 5
-yasuo.damage = 1000
-yasuo.speed = 100
-
-print("티모 - 체력 {} | 공격력 : {} | 이속 : {}" .format(timo.hp, timo.damage, timo.speed))
+    
+    
+    미니언01 = 캐릭터(100, 5, 20)
+    미니언01.상태보기("미니언1번의 상태")
+    야스오 = 챔피언(100, 1000, 500, "찌르기", "장막", "돌진", "난도질")
+    야스오.상태보기("야스오의 상태")
+    
+    q = 찌르기
+    W = 장막
+    e = 돌진
+    r = 난도질
