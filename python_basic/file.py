@@ -6,8 +6,9 @@ w = write(쓰기) / a = add(내용추가) / r = read(내용읽기) 세가지 모
 f = open("test.txt", "a", encoding = "UTF-8")
 f.write("피자 8분전"+ "\n") #개행문자
 f.write("콜라는 없다"+ "\n")
-#words = []
-#for i in f.readlines():
-    #words.append(i.strip())
-#print(words)
+f.close()
+words = []
+for i in f.readlines():
+    words.append(i.strip())
+print(words)
 f.close()
