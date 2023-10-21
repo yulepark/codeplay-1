@@ -4,16 +4,16 @@ import pygame
 pygame.init()
 
 
-screen_width = 480
-screen_height = 640
-screen = pygame.display.set_mode((screen_width, screen_height))
+screen_width = 480 #스크린 가로
+screen_height = 640 #스크린 세로
+screen = pygame.display.set_mode((screen_width, screen_height)) #객체 만들기(screen이 객체)
 
 
 pygame.display.set_caption("똥 피하기 - 코드플레이")
 bg = pygame.image.load("pygame/source/bg.png")
 
 character = pygame.image.load("pygame/source/character.png")
-character_size = character.get_rect(). size
+character_size = character.get_rect(). size #데이터
 character_width = character_size[0]
 character_height = character_size[1]
 character_xPos = (screen_width / 2) - (character_width / 2)
