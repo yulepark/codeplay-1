@@ -5,7 +5,7 @@ from selenium.webdriver.common.keys import Keys
 
 browser = webdriver.Chrome()
 
-browser.get("https://www.op.gg/champions")
+browser.get("https://www.melon.com/chart/index.htm")
 
 elem = browser.find_element(By.ID, "searchChampion")
 elem.send_keys("아리")
