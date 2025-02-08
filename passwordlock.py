@@ -64,7 +64,7 @@ class KeypadGUI:
             print("Incorrect password!")
 
     def unlock_door(self):
-
+ 
         if self.arduino:
             self.arduino.write(b'1')
             print("Door unlocked!")
